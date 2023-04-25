@@ -7,7 +7,7 @@ public class program
         Console.WriteLine("Welcome to product review management problem statement");
         List<Product> list = new List<Product>()
         {
-            new Product() {UserId=1, ProductId=11,Rating=5,Review="Good",IsLike=true},
+            new Product() {UserId=1, ProductId=1,Rating=5,Review="Good",IsLike=true},
             new Product() {UserId=2, ProductId=12,Rating=4,Review="Nice",IsLike=true},
             new Product() {UserId=3, ProductId=13,Rating=3,Review="Avg",IsLike=false},
             new Product() {UserId=4, ProductId=14,Rating=2,Review="Bad",IsLike=true},
@@ -44,16 +44,20 @@ public class program
         bool flag = true;
         while(flag)
         {
-            Console.WriteLine("Select Option \n 1.Display data \n 2.Top Records \n 3.Exit");
+            Console.WriteLine("Select Option \n 1.Display data \n 2.Top Records \n 3.Select Records \n 4.Exit");
             int option = Convert.ToInt32(Console.ReadLine());
             switch(option)
             {
                 case 1:
                     Display(list);
                     break;
-                case 2: operation.TopRecords(list);
+                case 2:
+                    operation.TopRecords(list);
                     break;
                 case 3:
+                    operation.RetriveRatings(list);
+                    break;
+                case 4:
                     flag= false;
                     break;
             }
